@@ -1,0 +1,7 @@
+*.class
+.txt
+logs/
+temp/
+bin/
+obj/
+.vscode

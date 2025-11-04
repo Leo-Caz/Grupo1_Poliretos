@@ -1,0 +1,71 @@
+import appinfo.InformacionGrupo;
+import java.util.Scanner;
+
+public class App {
+    private static final InformacionGrupo INFORMACION_GRUPO = new InformacionGrupo(
+        1,
+        new String[] {
+            "Bhorques.Nicolas",
+            "Cando.Alexander",
+            "Cartuche.Zoe",
+            "Castro.Leandro"
+        }
+    );
+
+    public static void main(String[] args) {
+        INFORMACION_GRUPO.mostrarResumen();
+        System.out.println();
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            boolean continuar = true;
+            while (continuar) {
+                mostrarMenu();
+                int opcion = leerOpcion(scanner);
+                switch (opcion) {
+                    case 1:
+                        ejecutarSerie1(scanner);
+                        break;
+                    case 2:
+                        ejecutarSerie2(scanner);
+                        break;
+                    case 0:
+                        continuar = false;
+                        System.out.println("Hasta luego!");
+                        break;
+                    default:
+                        System.out.println("Opcion invalida. Intente nuevamente.");
+                        break;
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    private static void mostrarMenu() {
+        System.out.println("=== Menu Principal ===");
+        System.out.println("1. Ejecutar Serie 1");
+        System.out.println("2. Ejecutar Serie 2");
+        System.out.println("0. Salir");
+    }
+
+    private static int leerOpcion(Scanner scanner) {
+        System.out.print("Seleccione una opcion: ");
+        while (!scanner.hasNextInt()) {
+            System.out.print("Seleccione una opcion valida: ");
+            scanner.next();
+        }
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+        return opcion;
+    }
+
+    private static void ejecutarSerie1(Scanner scanner) {
+        Serie1.ControladorSerie1 controlador = new Serie1.ControladorSerie1(INFORMACION_GRUPO, scanner);
+        controlador.run();
+    }
+
+    private static void ejecutarSerie2(Scanner scanner) {
+        Serie2.ControladorSerie2 controlador = new Serie2.ControladorSerie2(INFORMACION_GRUPO, scanner);
+        controlador.run();
+    }
+}
