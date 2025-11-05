@@ -12,7 +12,6 @@ public class nBA01 {
     private static final int Q3 = 3;
     private static final int Q4 = 4;
     private static final int Q5 = 5; // aceptación
-    private static final int Q6 = 6; // estado de rechazo
 
     // ===== Alfabeto =====
     private static final Map<Character, Integer> alfabeto = Map.of(
@@ -29,8 +28,7 @@ public class nBA01 {
         { Q1,  Q3,  Q0,  Q0,  Q0 },
         { Q1,  Q0,  Q0,  Q0,  Q4 },
         { Q1,  Q0,  Q5,  Q0,  Q0 },
-        { Q6,  Q6,  Q6,  Q6,  Q6 }, // aceptación
-        { Q6,  Q6,  Q6,  Q6,  Q6 }  // rechazo
+        { Q5,  Q5,  Q5,  Q5,  Q5 }, // aceptación
     };
     // ===== Vector de aceptación =====
     private static final boolean[] aceptacion = {
@@ -48,8 +46,7 @@ public class nBA01 {
             char ch = s.charAt(i);
             Integer col = alfabeto.get(ch);
             if (col == null) return false;           // símbolo fuera del alfabeto
-            q = MatrizTransiciones[q][col];
-            if (q == Q6) return false;          
+            q = MatrizTransiciones[q][col];          
         }
         return aceptacion[q];
     }
