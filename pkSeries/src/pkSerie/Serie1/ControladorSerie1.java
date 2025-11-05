@@ -1,4 +1,4 @@
-package Serie1;
+package pkSerie.Serie1;
 
 import appinfo.InformacionGrupo;
 import java.util.Scanner;
