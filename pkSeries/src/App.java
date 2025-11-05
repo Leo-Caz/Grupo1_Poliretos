@@ -46,6 +46,9 @@ public class App {
                     case 8:
                         ejecutarSerie8(scanner);
                         break;
+                    case 9:
+                        ejecutarCadenasCaracteres(scanner); // Nueva opción
+                        break;
                     case 0:
                         continuar = false;
                         System.out.println("Hasta luego!");
@@ -69,6 +72,7 @@ public class App {
         System.out.println("6. Ejecutar Serie 6");
         System.out.println("7. Ejecutar Serie 7");
         System.out.println("8. Ejecutar Serie 8");
+        System.out.println("9. Ejecutar Cadenas de Caracteres");
         System.out.println("0. Salir");
     }
 
@@ -120,6 +124,11 @@ public class App {
 
     private static void ejecutarSerie8(Scanner scanner) {
         Serie8.ControladorSerie8 controlador = new Serie8.ControladorSerie8(INFORMACION_GRUPO, scanner);
+        controlador.run();
+    }
+
+    private static void ejecutarCadenasCaracteres(Scanner scanner) {
+        CadenasCaracteres.ControladorCadenas controlador = new CadenasCaracteres.ControladorCadenas(INFORMACION_GRUPO, scanner);
         controlador.run();
     }
 }
