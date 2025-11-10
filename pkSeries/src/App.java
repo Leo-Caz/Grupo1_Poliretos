@@ -22,48 +22,30 @@ public class App {
                 mostrarMenu();
                 int opcion = leerOpcion(scanner);
                 switch (opcion) {
-                    case 1:
-                        ejecutarSerie1(scanner);
-                        break;
-                    case 2:
-                        ejecutarSerie2(scanner);
-                        break;
-                    case 3:
-                        ejecutarSerie3(scanner);
-                        break;
-                    case 4:
-                        ejecutarSerie4(scanner);
-                        break;
-                    case 5:
-                        ejecutarSerie5(scanner);
-                        break;
-                    case 6:
-                        ejecutarSerie6(scanner);
-                        break;
-                    case 7:
-                        ejecutarSerie7(scanner);
-                        break;
-                    case 8:
-                        ejecutarSerie8(scanner);
-                        break;
-                    case 9:
-                        ejecutarCadenasCaracteres(scanner); // Nueva opción
-                        break;
-                    case 0:
+                    case 1 -> ejecutarSerie1(scanner);
+                    case 2 -> ejecutarSerie2(scanner);
+                    case 3 -> ejecutarSerie3(scanner);
+                    case 4 -> ejecutarSerie4(scanner);
+                    case 5 -> ejecutarSerie5(scanner);
+                    case 6 -> ejecutarSerie6(scanner);
+                    case 7 -> ejecutarSerie7(scanner);
+                    case 8 -> ejecutarSerie8(scanner);
+                    case 9 -> ejecutarCadenasCaracteres(scanner);
+                    case 10 -> ejecutarArrays(scanner); 
+                    case 0 -> {
                         continuar = false;
-                        System.out.println("Hasta luego!");
-                        break;
-                    default:
-                        System.out.println("Opcion invalida. Intente nuevamente.");
-                        break;
+                        
+                    }
+                    default -> System.out.println("Opción inválida. Intente nuevamente.");
                 }
                 System.out.println();
             }
         }
     }
 
+    
     private static void mostrarMenu() {
-        System.out.println("=== Menu Principal ===");
+        System.out.println("MENÚ PRINCIPAL");
         System.out.println("1. Ejecutar Serie 1");
         System.out.println("2. Ejecutar Serie 2");
         System.out.println("3. Ejecutar Serie 3");
@@ -73,13 +55,14 @@ public class App {
         System.out.println("7. Ejecutar Serie 7");
         System.out.println("8. Ejecutar Serie 8");
         System.out.println("9. Ejecutar Cadenas de Caracteres");
+        System.out.println("10. Ejecutar Arrays");
         System.out.println("0. Salir");
     }
 
     private static int leerOpcion(Scanner scanner) {
-        System.out.print("Seleccione una opcion: ");
+        System.out.print("Seleccione una opción: ");
         while (!scanner.hasNextInt()) {
-            System.out.print("Seleccione una opcion valida: ");
+            System.out.print("Seleccione una opción válida: ");
             scanner.next();
         }
         int opcion = scanner.nextInt();
@@ -87,7 +70,7 @@ public class App {
         return opcion;
     }
 
-    private static void ejecutarSerie1(Scanner scanner) {
+      private static void ejecutarSerie1(Scanner scanner) {
         Serie1.ControladorSerie1 controlador = new Serie1.ControladorSerie1(INFORMACION_GRUPO, scanner);
         controlador.run();
     }
@@ -127,8 +110,63 @@ public class App {
         controlador.run();
     }
 
+    
     private static void ejecutarCadenasCaracteres(Scanner scanner) {
-        CadenasCaracteres.ControladorCadenas controlador = new CadenasCaracteres.ControladorCadenas(INFORMACION_GRUPO, scanner);
-        controlador.run();
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("SUBMENÚ: Cadenas de Caracteres");
+            System.out.println("1. C01 - Contar vocales");
+            System.out.println("2. C02 - Contar letras");
+            System.out.println("3. C03 - Eliminar vocales");
+            System.out.println("4. C04 - Eliminar letra específica");
+            System.out.println("5. C05 - Invertir con vocales mayúsculas");
+            System.out.println("6. C06 - Invertir con letras mayúsculas");
+            System.out.println("7. C07 - Mayúsculas sin 'J'");
+            System.out.println("8. C08 - Juego de anagramas");
+            System.out.println("9. C09 - Alternar mayúsculas/minúsculas");
+            System.out.println("0. Volver al menú principal");
+
+            int opcion = leerOpcion(scanner);
+            switch (opcion) {
+                case 1 -> new CadenasCaracteres.C01.ControladorC01().run();
+                case 2 -> new CadenasCaracteres.C02.ControladorC02().run();
+                case 3 -> new CadenasCaracteres.C03.ControladorC03().run();
+                case 4 -> new CadenasCaracteres.C04.ControladorC04().run();
+                case 5 -> new CadenasCaracteres.C05.ControladorC05().run();
+                case 6 -> new CadenasCaracteres.C06.ControladorC06().run();
+                case 7 -> new CadenasCaracteres.C07.ControladorC07().run();
+                case 8 -> new CadenasCaracteres.C08.ControladorC08().run();
+                case 9 -> new CadenasCaracteres.C09.ControladorC09().run();
+                case 0 -> continuar = false;
+                default -> System.out.println("Opción inválida. Intente nuevamente.");
+            }
+            System.out.println();
+        }
+    }
+
+       private static void ejecutarArrays(Scanner scanner) {
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("SUBMENÚ: Arrays");
+            System.out.println("1. A01 - Porcentaje de carga de palabras");
+            System.out.println("2. A02 - Matriz de iniciales");
+            System.out.println("3. A03 - Plano f(x)=2x con letras");
+            System.out.println("4. A04 - Matriz en forma de X");
+            System.out.println("5. A05 - Matriz aleatoria con nombre");
+            System.out.println("0. Volver al menú principal");
+
+            int opcion = leerOpcion(scanner);
+            switch (opcion) {
+                case 1 -> new Arrays.A01.ControladorA01().run();
+                case 2 -> new Arrays.A02.ControladorA02().run();
+                case 3 -> new Arrays.A03.ControladorA03().run();
+                case 4 -> new Arrays.A04.ControladorA04().run();
+                case 5 -> new Arrays.A05.ControladorA05().run();
+                case 0 -> continuar = false;
+                default -> System.out.println("Opción inválida.");
+            }
+            System.out.println();
+        }
     }
 }
+
