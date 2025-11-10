@@ -5,7 +5,7 @@ public class App {
     private static final InformacionGrupo INFORMACION_GRUPO = new InformacionGrupo(
         1,
         new String[] {
-            "Bhorques.Nicolas",
+            "Bohorquez.Nicolas",
             "Cando.Alexander",
             "Cartuche.Zoe",
             "Castro.Leandro"
@@ -88,12 +88,12 @@ public class App {
     }
 
     private static void ejecutarSerie1(Scanner scanner) {
-        Serie1.ControladorSerie1 controlador = new Serie1.ControladorSerie1(INFORMACION_GRUPO, scanner);
+        pkSerie.Serie1.ControladorSerie1 controlador = new pkSerie.Serie1.ControladorSerie1(INFORMACION_GRUPO, scanner);
         controlador.run();
     }
 
     private static void ejecutarSerie2(Scanner scanner) {
-        Serie2.ControladorSerie2 controlador = new Serie2.ControladorSerie2(INFORMACION_GRUPO, scanner);
+        pkSerie.Serie2.ControladorSerie2 controlador = new pkSerie.Serie2.ControladorSerie2(INFORMACION_GRUPO, scanner);
         controlador.run();
     }
 

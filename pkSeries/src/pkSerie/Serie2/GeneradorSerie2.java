@@ -1,4 +1,4 @@
-package Serie2;
+package pkSerie.Serie2;
 
 public class GeneradorSerie2 {
 
