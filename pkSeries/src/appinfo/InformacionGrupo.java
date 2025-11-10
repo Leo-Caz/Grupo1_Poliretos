@@ -9,7 +9,7 @@ public class InformacionGrupo {
         this.integrantes = integrantes.clone();
     }
 
-    public int getNumeroGrupo() {
+    public int getNumeroGrupo() {1
         return numeroGrupo;
     }
 

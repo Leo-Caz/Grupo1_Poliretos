@@ -47,7 +47,13 @@ public class App {
                         ejecutarSerie8(scanner);
                         break;
                     case 9:
-                        ejecutarCadenasCaracteres(scanner); // Nueva opción
+                        ejecutarCadenasCaracteres(scanner);
+                        break;
+                    case 10:
+                        ejecutarFiguras(scanner);    // Nueva opción añadida
+                        break;
+                    case 11:
+                        ejecutarAnimaciones(scanner); // Nueva opción añadida
                         break;
                     case 0:
                         continuar = false;
@@ -73,6 +79,8 @@ public class App {
         System.out.println("7. Ejecutar Serie 7");
         System.out.println("8. Ejecutar Serie 8");
         System.out.println("9. Ejecutar Cadenas de Caracteres");
+        System.out.println("10. Ejecutar Figuras");
+        System.out.println("11. Ejecutar Barras y Animaciones");
         System.out.println("0. Salir");
     }
 
@@ -129,6 +137,16 @@ public class App {
 
     private static void ejecutarCadenasCaracteres(Scanner scanner) {
         CadenasCaracteres.ControladorCadenas controlador = new CadenasCaracteres.ControladorCadenas(INFORMACION_GRUPO, scanner);
+        controlador.run();
+    }
+
+    private static void ejecutarFiguras(Scanner scanner) {
+        Figuras.ControladorFiguras controlador = new Figuras.ControladorFiguras();
+        controlador.run();
+    }
+
+    private static void ejecutarAnimaciones(Scanner scanner) {
+        BarrasAnimaciones.ControladorAnimaciones controlador = new BarrasAnimaciones.ControladorAnimaciones();
         controlador.run();
     }
 }
