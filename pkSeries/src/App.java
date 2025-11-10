@@ -1,6 +1,8 @@
 import appinfo.InformacionGrupo;
 import java.util.Scanner;
 
+import Grafos.ControladorDFAs;
+
 public class App {
     private static final InformacionGrupo INFORMACION_GRUPO = new InformacionGrupo(
         1,
@@ -22,37 +24,19 @@ public class App {
                 mostrarMenu();
                 int opcion = leerOpcion(scanner);
                 switch (opcion) {
-                    case 1:
-                        ejecutarSerie1(scanner);
-                        break;
-                    case 2:
-                        ejecutarSerie2(scanner);
-                        break;
-                    case 3:
-                        ejecutarSerie3(scanner);
-                        break;
-                    case 4:
-                        ejecutarSerie4(scanner);
-                        break;
-                    case 5:
-                        ejecutarSerie5(scanner);
-                        break;
-                    case 6:
-                        ejecutarSerie6(scanner);
-                        break;
-                    case 7:
-                        ejecutarSerie7(scanner);
-                        break;
-                    case 8:
-                        ejecutarSerie8(scanner);
-                        break;
-                    case 0:
+                    case 1 -> ejecutarSerie1(scanner);
+                    case 2 -> ejecutarSerie2(scanner);
+                    case 3 -> ejecutarSerie3(scanner);
+                    case 4 -> ejecutarSerie4(scanner);
+                    case 5 -> ejecutarSerie5(scanner);
+                    case 6 -> ejecutarSerie6(scanner);
+                    case 7 -> ejecutarSerie7(scanner);
+                    case 8 -> ejecutarSerie8(scanner);
+                    case 0 -> {
                         continuar = false;
                         System.out.println("Hasta luego!");
-                        break;
-                    default:
-                        System.out.println("Opcion invalida. Intente nuevamente.");
-                        break;
+                    }
+                    default -> System.out.println("Opcion invalida. Intente nuevamente.");
                 }
                 System.out.println();
             }
@@ -68,7 +52,7 @@ public class App {
         System.out.println("5. Ejecutar Serie 5");
         System.out.println("6. Ejecutar Serie 6");
         System.out.println("7. Ejecutar Serie 7");
-        System.out.println("8. Ejecutar Serie 8");
+        System.out.println("8. Ejecutar Grafos");
         System.out.println("0. Salir");
     }
 
@@ -119,7 +103,6 @@ public class App {
     }
 
     private static void ejecutarSerie8(Scanner scanner) {
-        Serie8.ControladorSerie8 controlador = new Serie8.ControladorSerie8(INFORMACION_GRUPO, scanner);
-        controlador.run();
+        ControladorDFAs.run(scanner);
     }
 }
