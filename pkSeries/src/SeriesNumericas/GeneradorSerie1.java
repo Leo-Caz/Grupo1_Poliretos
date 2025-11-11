@@ -1,4 +1,4 @@
-package pkSerie.Serie1;
+package SeriesNumericas;
 
 public class GeneradorSerie1 {
     public String g1_crearSerieNumericasS1For(int terminos) {

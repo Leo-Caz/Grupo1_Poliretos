@@ -9,7 +9,6 @@ public class App {
         new String[] {
             "Bohorquez.Nicolas",
             "Cando.Alexander",
-            "Cartuche.Zoe",
             "Castro.Leandro"
         }
     );
@@ -45,8 +44,8 @@ public class App {
 
     private static void mostrarMenu() {
         System.out.println("=== Menu Principal ===");
-        System.out.println("1. Ejecutar Serie 1");
-        System.out.println("2. Ejecutar Serie 2");
+        System.out.println("1. Ejecutar S.Numericas");
+        System.out.println("2. Ejecutar S.Caracteres");
         System.out.println("3. Ejecutar Serie 3");
         System.out.println("4. Ejecutar Serie 4");
         System.out.println("5. Ejecutar Serie 5");
@@ -68,12 +67,12 @@ public class App {
     }
 
     private static void ejecutarSerie1(Scanner scanner) {
-        pkSerie.Serie1.ControladorSerie1 controlador = new pkSerie.Serie1.ControladorSerie1(INFORMACION_GRUPO, scanner);
+        SeriesNumericas.ControladorSerie1 controlador = new SeriesNumericas.ControladorSerie1(INFORMACION_GRUPO, scanner);
         controlador.run();
     }
 
     private static void ejecutarSerie2(Scanner scanner) {
-        pkSerie.Serie2.ControladorSerie2 controlador = new pkSerie.Serie2.ControladorSerie2(INFORMACION_GRUPO, scanner);
+        SerieCaracteres.ControladorSerie2 controlador = new SerieCaracteres.ControladorSerie2(INFORMACION_GRUPO, scanner);
         controlador.run();
     }
 

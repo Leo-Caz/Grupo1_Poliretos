@@ -1,4 +1,4 @@
-package pkSerie.Serie2;
+package SerieCaracteres;
 
 public class GeneradorSerie2 {
 

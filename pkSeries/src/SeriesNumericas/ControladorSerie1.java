@@ -1,4 +1,4 @@
-package pkSerie.Serie1;
+package SeriesNumericas;
 
 import appinfo.InformacionGrupo;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class ControladorSerie1 {
     }
 
     public void run() {
-        System.out.println("=== Serie 1 (Grupo " + infoGrupo.getNumeroGrupo() + ") ===");
+        System.out.println("=== Serie Numerica (Grupo " + infoGrupo.getNumeroGrupo() + ") ===");
         int terminos = solicitarTerminos();
 
         System.out.println();
